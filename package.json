@@ -103,6 +103,7 @@
     "classnames": "2.2.5",
     "d3-scale": "^0.6.4",
     "ehmutable": "^1.2.0",
+    "gene-ontology-ribbon": "github:geneontology/ribbon",
     "highcharts": "^5.0.12",
     "jStat": "1.5.3",
     "linear-algebra": "3.1.1",

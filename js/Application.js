@@ -8,6 +8,9 @@ var _ = require('./underscore_ext');
 var {signatureField} = require('./models/fieldSpec');
 var {getColSpec} = require('./models/datasetJoins');
 var SampleSearch = require('./views/SampleSearch');
+// var Ribbon, { RibbonDataProvider } = 'gene-ontology-ribbon';
+// import Ribbon, { RibbonDataProvider } from '@sibyl229/gene-ontology-ribbon';
+// import '../../../node_modules/@sibyl229/gene-ontology-ribbon/lib/index.css';
 var Stepper = require('./views/Stepper');
 var Welcome = require('./containers/WelcomeContainer');
 var uuid = require('./uuid');
@@ -108,6 +111,9 @@ var Application = React.createClass({
 		if (loadPending) {
 			return <p style={{margin: 10}}>Loading your view...</p>;
 		}
+		// let subject = 'MGI:MGI:97490'; //
+        // let slim = 'agr';
+        // let title = 'GO Ribbon '+ subject ;
 
 		return (
 			<div>
@@ -130,6 +136,7 @@ var Application = React.createClass({
 								callback={callback}/>
 						</AppControls>
 							}
+                    <div>Insert widget here</div>
 					<Grid onClick={this.onClick}>
 					{/*
 						<Row>
@@ -141,6 +148,36 @@ var Application = React.createClass({
 						{children}
 							</Col>
 						</Row>
+
+
+                        {/*<RibbonDataProvider subject={subject} slim={slim}>*/}
+                            {/*{*/}
+                                {/*({title, data, dataError, dataReceived}) => (*/}
+                                    {/*<div>*/}
+                                        {/*{*/}
+                                            {/*dataReceived ?*/}
+                                                {/*<Ribbon*/}
+                                                    {/*geneUrlFormatter={(geneId) => `http://stagebuild.alliancegenome.org/gene/${geneId}`}*/}
+                                                    {/*title={title}*/}
+                                                    {/*slimlist={data} /> :*/}
+                                                {/*null*/}
+                                        {/*}*/}
+                                        {/*{dataError ? dataError : null}*/}
+                                        {/*{*/}
+                                            {/*(!dataReceived && !dataError) ?*/}
+                                                {/*<GridLoader className='spinner'*/}
+                                                            {/*align='middle'*/}
+                                                            {/*color='#699'*/}
+                                                            {/*size={8}*/}
+                                                            {/*margin={2}*/}
+                                                            {/*loading={true}*/}
+                                                {/*/> :*/}
+                                                {/*null*/}
+                                        {/*}*/}
+                                    {/*</div>*/}
+                                {/*)*/}
+                            {/*}*/}
+                        {/*</RibbonDataProvider>*/}
 					</Grid>
 					{_.getIn(state, ['km', 'id']) ? <KmPlot
 							callback={callback}
